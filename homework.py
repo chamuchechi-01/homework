@@ -1,35 +1,27 @@
-class it_academy:
-    def __init__(self, student, score, teacher):
-        self.student = student
-        self.__test_score = score
-        self.teacher = teacher
+class BankAccount:
+    def __init__(self, account_number):
+        self.balance = 0
+        self.account_number = account_number
 
-    def get_student(self):
-        return self.student
+    def deposit(self, amount):
+        self.balance += amount
 
-    def get_score(self):
-        return self.__test_score
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+        else:
+            print("Insufficient funds")
 
-    def get_teacher(self):
-        return self.teacher
+    def get_balance(self):
+        return self.balance
 
-    def set_student(self, student):
-        self.student = student
+    def get_account_number(self):
+        return self.account_number
 
-    def set_test_score(self, score):
-        self.__test_score = score
-
-    def set_teacher(self, teacher):
-        self.teacher = teacher
-
-
-it_academy = it_academy("Amir", 85, "Mirafzal")
-
-print(it_academy.get_score())
-
-it_academy.get_student()
-print(it_academy.get_student())
-
-it_academy.get_teacher()
-print(it_academy.get_teacher())
-
+# Example usage
+account = BankAccount("123456")
+account.deposit(100)
+print(account.get_balance())  
+account.withdraw(50)
+print(account.get_balance())
+print(account.get_account_number())  
